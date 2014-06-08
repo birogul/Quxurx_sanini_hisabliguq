@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>tormahiri</title>
+  <script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+</head>
+<body>
+<button id="click">tormahiri</button>
+<script>
+// author tormahiri
+
+// click count app ,inlcude download counter 
+  var messagesRef = new Firebase('https://clickme.firebaseio.com/');
+	 messagesRef.child('location').on('value', function(snapshot) {
+	 	
+$("#click").click(function(){
+var count=snapshot.val();
+ messagesRef.set({
+
+  location:++count
+});
+})
+
+});
+ 
+
+</script>
+</body>
+</html>
